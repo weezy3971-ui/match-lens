@@ -1,5 +1,7 @@
 # Foundry integration status
 
+> Optional unverified development prototype. Live Foundry and Azure were removed from the October 26 release scope. The hosted build hides this execution option, and submission materials must not claim it.
+
 The local Node service connects the browser execution selector to three server-only Foundry role adapters. Local deterministic roles remain the default. Azure sign-in, live execution, deployment and public access are deferred and unverified.
 
 ## Local preparation

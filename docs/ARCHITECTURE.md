@@ -1,5 +1,7 @@
 # MatchLens 4D Architecture
 
+Release note, October 26: the public build uses the deterministic in-browser orchestration described below. Azure and live Foundry are excluded from the release; legacy cloud design sections are retained only as clearly unverified development history.
+
 ## Current local flow
 
 Analytics contract `matchlens-analytics/2.3.0` uses `phaseCoverage` for annotation completeness, not a probability. Match inputs require `attackingGoalX` for both teams and `attackPattern` (`possession` or `counterattack`). Direction must be opposite within a segment; change-of-ends segments must be separate inputs. The possession pattern expects seven phases; the counterattack expects recovery, carry, pass, shot and goal. These are declared synthetic templates, not automatically inferred tactics. Metric `confidence` remains an uncalibrated synthetic-method score.
@@ -96,7 +98,7 @@ Orchestration tool arguments derive event identities, participants, defending te
 
 `src/agents/orchestrator.ts` currently runs deterministic local role adapters so orchestration, trace, failure, and UI contracts can be tested without credentials. Microsoft Foundry model execution, Microsoft Agent Framework runtime proof, Azure hosting, and Application Insights ingestion are not claimed. Azure CLI was present but unauthenticated during Phase 5 verification, and the required environment values were unset.
 
-The current deployment boundary is intentionally static: `infra/main.bicep` creates one Free Azure Static Web App and the manual GitHub workflow uploads only a verified `dist/`. Azure supplies managed HTTPS; `staticwebapp.config.json` supplies SPA fallback, cache policy, and security headers. Container Apps, Key Vault, and Application Insights are deferred until Foundry creates an actual server process, secret, and telemetry sink.
+The current release boundary is intentionally static: the GitHub Pages workflow verifies dependencies, audit, tests and build before publishing `dist/` over managed HTTPS. There is no hosted API, credential store, model runtime or telemetry sink. The Azure template and optional Foundry transport are archived development paths, not release claims.
 
 ## Failure and threat boundaries
 

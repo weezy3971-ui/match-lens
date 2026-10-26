@@ -8,7 +8,7 @@
     "pretest": "node --experimental-strip-types infra/generate-validators.mjs",
     "prebuild": "node --experimental-strip-types infra/generate-validators.mjs",
     "dev": "vite",
-    "build": "tsc --noEmit && vite build && node infra/write-license-notices.mjs",
+    "build": "tsc --noEmit && vite build --base=./ && node infra/write-license-notices.mjs",
     "preview": "vite preview",
     "serve": "node --env-file-if-exists=.env.local --experimental-strip-types src/server/start.ts",
     "test": "node --experimental-strip-types --test src/*.test.ts",

@@ -10,10 +10,10 @@ Status: recording plan, not a recorded or published demo. Use the final verified
 | 42–57 s | Switch to Fan, rerun, show cue count and replay. | Fan mode shortens the explanation and runs a faster replay. Analyst mode retains more cues and evidence. Both use the same underlying measurements. |
 | 57–72 s | Select Intercepted attack; run explanation. | This pass fails. The possession ends at the turnover, and the explanation omits later shot and goal claims. Partial evidence stays visible. |
 | 72–87 s | Use Test narrator recovery; show retry/fallback trace. | A pending narrator exceeds its deadline, retries once, then returns a labelled fallback containing cited claims. Cancelling a run prevents late output from appearing. |
-| 87–102 s | Show verified Foundry trace if available; otherwise show the local execution trace. | Current local wording: These roles run as deterministic adapters. Foundry execution and Azure hosting remain pending verification. |
-| 102–110 s | Return to replay and end on product title. | The prototype lets you inspect the source of an explanation and choose how much detail to show. The next release gate is verified Microsoft-hosted agent execution. |
+| 87–102 s | Expand the execution trace and one handoff. | These deterministic roles share a versioned context. Every tool result, handoff, validation decision and retry is visible, so a producer can audit how the replay was assembled. |
+| 102–110 s | Return to replay and end on product title. | MatchLens turns synthetic events into an explainable replay for two different audiences, without inventing evidence. |
 
-For the final hackathon video, replace the 87–110-second copy only after real Foundry execution, category evidence and judge access pass. Name the actual service, measured latency and observable tool decision. Do not substitute a simulated trace or a logo for cloud proof. If cloud integration is incomplete, preserve the limitation and do not claim the technology gate passed.
+The final video must use the hosted deterministic build. Do not mention or display Foundry, Azure, a simulated cloud trace, or an unsupported Microsoft-service claim. The public repository, hosted demo, video and submission text must describe the same implemented behavior.
 
 ## Recording checks
 

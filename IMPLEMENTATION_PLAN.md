@@ -1,6 +1,6 @@
 # MatchLens 4D Implementation Plan
 
-Current implementation note (October 24): the integrated prototype uses TypeScript/Node, React/Three.js and constrained Foundry Responses adapters. The Python/FastAPI, Agent Framework and additional Azure services proposed below are design history, not implemented dependencies or release claims. The category permits several orchestration approaches; no unused SDK is required merely for its name. Live Foundry coordination, deployment and category acceptance remain unverified. See docs/ARCHITECTURE.md and docs/RELEASE_AUDIT.md for current evidence.
+Current release note (October 26): the integrated prototype uses TypeScript/Node, React/Three.js and deterministic Analyst/Director/Narrator adapters. The Python/FastAPI, Agent Framework, Foundry and Azure services proposed below are design history or optional unverified development paths, not release claims. The public build uses GitHub Pages. The category permits several orchestration approaches, but omission of a Microsoft-hosted AI runtime remains a judging risk. See docs/ARCHITECTURE.md and docs/RELEASE_AUDIT.md for current evidence.
 
 ## 1. Product Decision
 
@@ -729,7 +729,7 @@ Exit criteria:
 
 ### Phase 3: Cameras and spatial memory, October 12 to 14
 
-**Implementation status, October 6:** Complete locally. MatchLens now has broadcast, tactical, player, and free cameras; selected-entity lock; six fixture-derived spatial overlays; reduced-motion cuts; return-to-play; and strict versioned URL scene sharing/restoration. Focused tests cover camera behavior, overlay derivation, schema coverage, and invalid share state. Chrome verification covers all camera modes, free-camera movement and pose persistence, exact 48-second scene restoration, and return-to-play. Foundry remains a separate deferred external gate.
+**Implementation status, October 26:** Complete for the deterministic release. MatchLens has broadcast, tactical, player, and free cameras; selected-entity lock; six fixture-derived spatial overlays; reduced-motion cuts; return-to-play; and strict versioned URL scene sharing/restoration. Focused tests cover camera behavior, overlay derivation, schema coverage, and invalid share state. Chrome verification covers all camera modes, free-camera movement and pose persistence, exact 48-second scene restoration, and return-to-play. Foundry is excluded from release scope and is not a submission claim.
 
 **Judging target:** User Experience, Real-World Impact, and the render stage of the challenge.
 

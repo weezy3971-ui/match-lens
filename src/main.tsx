@@ -592,7 +592,7 @@ function App({ match, onScenario, anchorEventId, onMoment }: { match: Match; onS
 
       <aside className="evidence" aria-labelledby="evidence-title">
         <div className="rail-heading"><p className="eyebrow">Verified match state</p><h2 id="evidence-title">{activeEvent.label}</h2></div>
-        <label className="entity-picker">Execution source<select aria-label="Execution source" value={executionSource} disabled={agentBusy} onChange={(event) => { setExecutionSource(event.target.value as "local" | "foundry"); setAgentReplayPlaying(false); setAgentContext(null); setAgentTrace([]); setAgentResult(null); setModelTrace(null); setAgentError(""); }}><option value="local">Local deterministic roles</option><option value="foundry">Foundry server (configuration required)</option></select></label>
+        {import.meta.env.DEV && <label className="entity-picker">Execution source<select aria-label="Execution source" value={executionSource} disabled={agentBusy} onChange={(event) => { setExecutionSource(event.target.value as "local" | "foundry"); setAgentReplayPlaying(false); setAgentContext(null); setAgentTrace([]); setAgentResult(null); setModelTrace(null); setAgentError(""); }}><option value="local">Local deterministic roles</option><option value="foundry">Foundry server (configuration required)</option></select></label>}
         {agentError && <p role="alert">{agentError}</p>}
         {modelTrace != null && <details><summary>Foundry response and tool trace</summary><pre>{JSON.stringify(modelTrace, null, 2)}</pre></details>}
         <label className="entity-picker">Analyse through moment<select aria-label="Analyse through moment" value={anchorEventId} onChange={(event) => onMoment(event.target.value)}><option value="">Entire scenario</option>{match.events.map((event) => <option key={event.id} value={event.id}>{formatTime(event.timestampSeconds)} / {event.label}</option>)}</select></label>
@@ -616,7 +616,7 @@ function App({ match, onScenario, anchorEventId, onMoment }: { match: Match; onS
         </dl>
         <div className="scene-actions performance-actions"><button type="button" onClick={() => { setRenderMeasurement(null); setMeasurementRun((value) => value + 1); }}>Measure render performance</button></div>
         <p className="scene-status">Two seconds to warm up, then five visible seconds including slow frames. Repeat during a directed replay; results depend on this device and viewport.</p>
-        <div className="service-state"><span className="state-mark" aria-hidden="true" /><div><strong>Local orchestration ready / Foundry trace deferred</strong><p>Eight tools, handoffs, grounding, retries, and trace records run locally. Azure access is still required to verify an external Foundry or Application Insights trace.</p></div></div>
+        <div className="service-state"><span className="state-mark" aria-hidden="true" /><div><strong>Deterministic orchestration ready</strong><p>Eight validated tools, three role handoffs, grounding, retries, recovery, and trace records run in this browser demo.</p></div></div>
       </aside>
 
       <footer className="transport" aria-label="Replay transport">

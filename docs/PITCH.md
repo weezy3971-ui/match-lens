@@ -1,6 +1,6 @@
 # MatchLens 4D pitch draft
 
-Status: local prototype copy. Recheck against the final deployed build before submission.
+Status: release copy. Recheck against the final deployed build and recorded video before submission.
 
 ## Short description
 
@@ -14,9 +14,9 @@ The original possession variants demonstrate a goal, an unobserved shot outcome,
 
 ## Technology and category
 
-The current implementation uses TypeScript, React, Three.js, standalone Ajv validators and a local Node service. Eight validated tools support a versioned Analyst, Director and Narrator workflow. Local deterministic adapters are the default. A separate Foundry execution option connects server-only Responses calls to constrained role decisions, grounded tool results and shared handoffs. Integrated HTTP tests use mocked provider responses and verify selected-window isolation and cancellation; live model reasoning remains unverified.
+The release uses TypeScript, React, Three.js and standalone Ajv validators. Eight validated tools support a versioned Analyst, Director and Narrator workflow. These deterministic roles coordinate through shared state, bounded evidence, explicit handoffs, grounding checks, retries and a cited fallback. A separate server-side Foundry transport remains optional, mock-tested development code; the hosted experience does not expose it or claim live model reasoning.
 
-The intended category is Best Multi-Agent System / Orchestration. The official category allows several orchestration approaches; this implementation does not use the Agent Framework SDK. Real Foundry execution and effective model coordination still need proof for the proposed story. Azure Static Web Apps infrastructure is prepared, but deployment and public access remain unverified. Replace this paragraph with verified service responsibilities and trace evidence after integration; category acceptance remains the judges' decision.
+The intended category is Best Multi-Agent System / Orchestration. The category permits orchestration approaches other than Agent Framework, and this release does not claim that SDK, Foundry, or Azure. The visible trace and recovery path demonstrate the implemented coordination. Omitting Microsoft-hosted agent execution weakens the hero-technology evidence and may affect category or Stage One judging; category acceptance remains the judges' decision.
 
 ## Evidence and limits
 
@@ -25,6 +25,6 @@ The local repository includes regression tests for calculations, selected and se
 ## Required final links
 
 - Public repository: https://github.com/weezy3971-ui/match-lens (source published and publicly verified October 26).
-- Free public demo: pending deployment and clean-browser verification.
+- Free public demo: https://weezy3971-ui.github.io/match-lens/ (pending final clean-browser verification).
 - Public video under two minutes: pending recording and duration/access checks.
 - Final submission receipt: pending.

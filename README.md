@@ -33,7 +33,7 @@ The current prototype validates and plays a seventy-two-second synthetic attacki
 5. Choose **Test narrator recovery** to demonstrate two failed attempts followed by a labelled, cited deterministic fallback.
 6. Use the Phase 4 causal steps and metric disclosures to audit any source event, frame, entity, confidence value, or limitation.
 
-The local roles are deterministic orchestration adapters, not claimed model calls. They prove tool selection, shared state, handoffs, grounding, recovery, personalization, and the interface contract while Azure access is unavailable. Microsoft Foundry remains the external model-hosting, evaluation, and cloud-trace gate.
+The released roles are deterministic orchestration adapters, not model calls. They demonstrate tool selection, shared state, handoffs, grounding, recovery, personalization, and an inspectable execution contract. Azure and live Foundry execution were removed from the submission scope on October 26; the optional server transport remains unverified development code and is not exposed by the hosted build.
 
 ## Requirements
 
@@ -41,9 +41,7 @@ The local roles are deterministic orchestration adapters, not claimed model call
 - npm 11 or later
 - A WebGL-capable browser
 
-Microsoft Foundry integration also requires an Azure subscription, a Foundry project, a deployed model, an Azure sign-in, and the values listed in `.env.example`.
-
-Azure hosting is prepared for the current static client with `infra/main.bicep`, `public/staticwebapp.config.json`, and a manual verified GitHub workflow. Provisioning requires an Azure subscription and is intentionally separate from local development.
+The public demo is a static GitHub Pages build and needs no cloud account or credentials. See `docs/GITHUB_PAGES.md`.
 
 ## Run locally
 
@@ -54,7 +52,7 @@ npm.cmd run build
 npm.cmd run serve
 ```
 
-Open <http://127.0.0.1:4174>. This loopback-only service serves the built client and `/api/explain`. Local execution works without Azure. Foundry configuration and live execution remain separate gates; see `docs/FOUNDRY_INTEGRATION.md`. Schema validators compile before dev, tests and builds so browser validation works under the strict security policy without runtime string compilation.
+Open <http://127.0.0.1:4174>. This loopback-only service serves the built client and the optional `/api/explain` development endpoint. The released workflow runs fully in the browser without cloud configuration. Schema validators compile before dev, tests and builds so browser validation works under the strict security policy without runtime string compilation.
 
 ## Current verification
 
@@ -62,16 +60,16 @@ To verify an isolated source snapshot from the repository root, run `node infra/
 
 On Windows with native `tar.exe`, `node infra/package-source.mjs` audits the source, verifies a fresh snapshot, then packages the filtered snapshot into an ignored `infra/local/MatchLens4D-source-*.zip` with a SHA-256 sidecar. It checks archive paths and required configuration files. It excludes credentials, Git history, dependencies and generated builds; unpack and follow the normal setup commands. This is a local review candidate and does not publish or submit the project.
 
-The copy filter excludes nested local folders, environment configuration, caches, generated validators and logs. `node infra/audit-source.mjs` produces an ignored source manifest with hashes and checks a limited set of credential signatures and media requiring review. It is preparation for an explicit staged-diff review, not complete security or legal clearance. See `docs/RELEASE_AUDIT.md` for evidence and open release gates. This checkout's origin is Microsoft's organizer repository; a separate project publication destination is still required.
+The copy filter excludes nested local folders, environment configuration, caches, generated validators and logs. `node infra/audit-source.mjs` produces an ignored source manifest with hashes and checks a limited set of credential signatures and media requiring review. It is preparation for an explicit staged-diff review, not complete security or legal clearance. See `docs/RELEASE_AUDIT.md` for evidence and open release gates. The project source is published at https://github.com/weezy3971-ui/match-lens; the organizer checkout remains separate.
 
-- 81 tests cover schemas, possession/direction boundaries, fractional event provenance, missing tracking, event-only outcomes, complete shared-workspace restoration and invalid links, orchestration/grounding/recovery, HTTP-to-Foundry mock handoffs/cancellation, deployment, render measurement, source-copy exclusions and distribution-license boundaries.
+- The automated suite covers schemas, possession/direction boundaries, fractional event provenance, missing tracking, event-only outcomes, complete shared-workspace restoration and invalid links, orchestration/grounding/recovery, optional HTTP transport mocks, GitHub Pages deployment, render measurement, source-copy exclusions and distribution-license boundaries.
 - The TypeScript and Vite production build passes.
 - `npm run benchmark` records local pipeline timings in ignored `local/performance.json`. On October 24, analytics 2.3 original/Analyst measured 10.562 ms median and 12.724 ms p95 across twenty samples after warmup. This excludes rendering, HTTP and models; see `docs/PERFORMANCE.md`.
 - **Measure render performance** in the evidence rail runs a repeatable foreground sample, including slow frames, and reports FPS, worst frame and slow-frame count. At DPR 1, desktop original/Analyst measured 59.9 FPS and phone-width original/Fan measured 59.8 FPS on the same desktop device. See docs/PERFORMANCE.md for sample limits. Older observations that discarded long frames are not current acceptance evidence.
 - Browser checks cover audience modes, caption citations, stale-output reset, narrator recovery, visible keyboard focus, responsive selectors and the counterattack. Current performance scope and remaining device checks are documented separately.
 - CI runs clean installation, dependency audit, tests, and the production build.
-- Azure access and Foundry endpoint/model configuration are deferred. External execution and traces remain explicitly unverified; Application Insights ingestion is not implemented.
+- Azure, live Foundry execution, cloud traces and Application Insights are intentionally excluded from this release and are not claimed.
 
 See `docs/ARCHITECTURE.md` for the calculation boundary, `docs/EVIDENCE.md` for the evidence log, and `IMPLEMENTATION_PLAN.md` for the complete delivery plan.
 
-See `docs/DEPLOYMENT.md` for the Azure topology, provisioning commands, secret handling, public verification gate, recovery path, cost boundary, and known limits.
+See `docs/GITHUB_PAGES.md` for the active deployment and public verification path. `docs/DEPLOYMENT.md` records the archived Azure design and is not a release claim.

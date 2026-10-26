@@ -1,5 +1,7 @@
 # Azure deployment
 
+> Archived design, not the current release path. On October 26, 2026, Azure was removed from submission scope. Use `GITHUB_PAGES.md` for the active deployment and verification procedure. No Azure or hosted Foundry capability is claimed.
+
 ## Current topology
 
 The prepared Azure template provisions only the static browser client on the Free Static Web Apps SKU. The repository now also contains a loopback-only Node service for optional Foundry execution; the Azure template does not deploy it. Do not use the static topology as evidence of a hosted Foundry backend. No Azure resource, deployed identity or public access has been verified.
