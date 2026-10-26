@@ -25,6 +25,6 @@ The local repository includes regression tests for calculations, selected and se
 ## Required final links
 
 - Public repository: https://github.com/weezy3971-ui/match-lens (source published and publicly verified October 26).
-- Free public demo: https://weezy3971-ui.github.io/match-lens/ (pending final clean-browser verification).
+- Free public demo: https://weezy3971-ui.github.io/match-lens/ (public desktop flow verified October 26).
 - Public video under two minutes: pending recording and duration/access checks.
 - Final submission receipt: pending.

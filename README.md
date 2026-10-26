@@ -1,6 +1,6 @@
 # MatchLens 4D
 
-Source: https://github.com/weezy3971-ui/match-lens · [CI verification](https://github.com/weezy3971-ui/match-lens/actions/workflows/ci.yml)
+Source: https://github.com/weezy3971-ui/match-lens · [Public demo](https://weezy3971-ui.github.io/match-lens/) · [CI verification](https://github.com/weezy3971-ui/match-lens/actions/workflows/ci.yml)
 
 MatchLens 4D turns synthetic football events into an explorable 3D replay and an evidence-backed explanation for broadcasters, analysts, and fans.
 

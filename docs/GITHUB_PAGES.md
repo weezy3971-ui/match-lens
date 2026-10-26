@@ -13,3 +13,5 @@ Verify each release in a signed-out browser:
 5. Open `health.json` and confirm the synthetic-data marker and version.
 
 GitHub Pages supplies managed HTTPS but not the Azure Static Web Apps response headers in `public/staticwebapp.config.json`. The app uses no credentials, personal data, external APIs, footage, fonts, or real match data. Public verification is a separate gate from source CI and local visual checks.
+
+Verification record, October 26: Verify and Pages passed for commit `21ac3c0`. The public HTML, health response, JavaScript and stylesheet returned HTTP 200. The hosted desktop flow completed Analyst (7 cues at 1x), Fan (4 cues at 2x), and the labelled Narrator fallback with 24 trace records. Phone-width hosted verification remains open.
