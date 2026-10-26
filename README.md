@@ -1,5 +1,7 @@
 # MatchLens 4D
 
+Source: https://github.com/weezy3971-ui/match-lens · [CI verification](https://github.com/weezy3971-ui/match-lens/actions/workflows/ci.yml)
+
 MatchLens 4D turns synthetic football events into an explorable 3D replay and an evidence-backed explanation for broadcasters, analysts, and fans.
 
 The project targets the **Best Multi-Agent System / Orchestration** category in Microsoft's Inside the Game hackathon.
@@ -62,7 +64,7 @@ On Windows with native `tar.exe`, `node infra/package-source.mjs` audits the sou
 
 The copy filter excludes nested local folders, environment configuration, caches, generated validators and logs. `node infra/audit-source.mjs` produces an ignored source manifest with hashes and checks a limited set of credential signatures and media requiring review. It is preparation for an explicit staged-diff review, not complete security or legal clearance. See `docs/RELEASE_AUDIT.md` for evidence and open release gates. This checkout's origin is Microsoft's organizer repository; a separate project publication destination is still required.
 
-- 80 tests cover schemas, possession/direction boundaries, fractional event provenance, missing tracking, event-only outcomes, complete shared-workspace restoration and invalid links, orchestration/grounding/recovery, HTTP-to-Foundry mock handoffs/cancellation, deployment, render measurement, and source-copy exclusions.
+- 81 tests cover schemas, possession/direction boundaries, fractional event provenance, missing tracking, event-only outcomes, complete shared-workspace restoration and invalid links, orchestration/grounding/recovery, HTTP-to-Foundry mock handoffs/cancellation, deployment, render measurement, source-copy exclusions and distribution-license boundaries.
 - The TypeScript and Vite production build passes.
 - `npm run benchmark` records local pipeline timings in ignored `local/performance.json`. On October 24, analytics 2.3 original/Analyst measured 10.562 ms median and 12.724 ms p95 across twenty samples after warmup. This excludes rendering, HTTP and models; see `docs/PERFORMANCE.md`.
 - **Measure render performance** in the evidence rail runs a repeatable foreground sample, including slow frames, and reports FPS, worst frame and slow-frame count. At DPR 1, desktop original/Analyst measured 59.9 FPS and phone-width original/Fan measured 59.8 FPS on the same desktop device. See docs/PERFORMANCE.md for sample limits. Older observations that discarded long frames are not current acceptance evidence.

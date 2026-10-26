@@ -8,7 +8,8 @@ const fiber = JSON.parse(readFileSync(join(root, 'infra/licenses/react-three-fib
 const notices = [readFileSync(join(root, 'THIRD_PARTY_NOTICES.md'), 'utf8'), '\n--- Repository starter LICENSE.md ---\n' + readFileSync(join(root, 'LICENSE.md'), 'utf8'), '\n--- Source adaptations: God\'s Eye View ---\n' + readFileSync(join(root, 'infra/licenses/gods-eye-view.MIT.txt'), 'utf8')];
 let included = 0;
 for (const [location, metadata] of Object.entries(lock.packages)) {
-  if (!location || !existsSync(join(root, location, 'package.json'))) continue;
+  // Development tools are installed during builds but are not distributed in dist/.
+  if (!location || metadata.dev || !existsSync(join(root, location, 'package.json'))) continue;
   const packageRoot = join(root, location);
   const installed = JSON.parse(readFileSync(join(packageRoot, 'package.json'), 'utf8'));
   if (installed.version !== metadata.version) throw new Error(`Installed version differs from lockfile for ${location}`);
@@ -23,4 +24,4 @@ for (const [location, metadata] of Object.entries(lock.packages)) {
 }
 const output = join(root, 'dist', 'THIRD_PARTY_LICENSES.txt');
 writeFileSync(output, notices.join('\n'), 'utf8');
-console.log(`Included notices for ${included} installed packages in dist/THIRD_PARTY_LICENSES.txt`);
+console.log(`Included notices for ${included} installed runtime packages in dist/THIRD_PARTY_LICENSES.txt; development tools are not distributed`);
