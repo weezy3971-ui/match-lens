@@ -1,0 +1,10 @@
+{
+  "package": "@react-three/fiber",
+  "version": "9.8.1",
+  "integrity": "sha512-GbNP4r6F/gpclFKkLGHzXcuwFWAzLyKsmrQGcDuwK3wQnwLH6F1TfGtEYjHy8OQoGsajwT19B9jtVLLjjfH09w==",
+  "gitHead": "53ec672ac4a7189711766b87ece18889abbb32d4",
+  "verifiedAt": "2026-10-24",
+  "registryCommand": "npm view @react-three/fiber@9.8.1 version gitHead dist.integrity --json",
+  "licenseUrl": "https://raw.githubusercontent.com/pmndrs/react-three-fiber/53ec672ac4a7189711766b87ece18889abbb32d4/LICENSE",
+  "packageUrl": "https://raw.githubusercontent.com/pmndrs/react-three-fiber/53ec672ac4a7189711766b87ece18889abbb32d4/packages/fiber/package.json"
+}

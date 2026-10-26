@@ -1,0 +1,13 @@
+# Machine-local source material, reference clones, and logs
+local/
+
+# Local configuration and generated output
+.env
+.env.*
+!.env.example
+.venv/
+node_modules/
+dist/
+src/domain/generated/
+__pycache__/
+*.log
